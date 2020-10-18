@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sin Chee TODO List</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/utils.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+  </head>
+
+  <body onload="run()">
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <div id='sidebar'>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a onclick="overwrite(0)">On Going</a>
+            <a onclick="overwrite(1)">Set Aside</a>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 我的枯燥生活</span>
+    </div>
+    <br>
+
+    <div class="split left">
+        <div class="centered">
+            <h1 id="currentMode">On Going Project</h1>
+            <div id='projects'>
+            </div>
+            <br>
+            <div id='search'>
+                <input type="text" placeholder="Search.." name="search" id="searchProject">
+                <button type="submit">Search</button>
+            </div>
+            <br>
+            <div>
+                <label>Project</label>
+                <input type="text" placeholder="Project Name"  id="addProject">
+                <button onclick="addProject()">ADD</button>
+            </div>
+        </div>
+    </div>
+
+    <div class='split right'>
+        <h1 style="font-size:30px" id="projectName">Project Name</h1>
+        <h1 style="font-size:30px">Short Description</h1>
+        <div class="centered">
+            <textarea id='projectDescription' rows="10" cols="50"></textarea>
+            <br>
+            <button onclick="addDescription()">UPDATE</button>
+        </div>
+        <a style="font-size:30px">Links</a>
+        <div class="centered">
+            <ul id='links'>
+            </ul>
+            <div id="addlink" style="visibility: hidden;">
+                <label>Label</label>
+                <input type="text" placeholder="Label" id="projectLabel">
+                <br>
+                <label>Link</label>
+                <input type="text" placeholder="Link" id="projectLink">
+                <br>
+                <button onclick="addLink()">ADD</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+  </body>
+</html>
