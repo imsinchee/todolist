@@ -119,7 +119,7 @@ function addDescription(){
 function addLink(){
     var label = document.getElementById("projectLabel").value
     var link = document.getElementById("projectLink").value
-    var addLink = db.ref('TODO/'+read+'/ongoing/'+curentprojectname+'/links/'+label)
+    var addLink = db.ref('TODO/'+read+'/'+curentprojectname+'/links/'+label)
     addLink.set(link).then(()=>{
         document.getElementById("projectLabel").value = ''
         document.getElementById("projectLink").value = ''
